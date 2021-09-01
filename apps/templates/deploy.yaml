@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx_{{ .Values.name }}
+  name: nginx
 spec:
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: nginx_{{ .Values.name }}
+      app: nginx
   replicas: 8
   template:
     metadata:
       labels:
-        app: nginx_{{ .Values.name }}
+        app: nginx
     spec:
       containers:
-      - name: nginx_{{ .Values.name }}
+      - name: nginx
         image: nginx

@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx_service
+  name: nginxservice
   labels:
-    app: nginx_service
+    app: nginxservice
 spec:
   type: ClusterIP
   selector:
-    app: nginx_{{ .Values.name }}
+    app: nginx
   ports:
   - port: 8080
     targetPort: 80
