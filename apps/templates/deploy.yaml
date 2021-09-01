@@ -28,6 +28,6 @@ spec:
   selector:
     app: my-nginx-{{ .Values.name }}
   ports:
-  - port: 8000
+  - port: 
     targetPort: 80
 
