@@ -14,8 +14,9 @@ spec:
         app: cc-nginx
     spec:
       containers:
-        - name: cc-nginx
-          image: {{ .Values.image }}
+      - name: cc-nginx
+        image: {{ .Values.image }}
         command:
           - sleep
           - "3600"
+    
