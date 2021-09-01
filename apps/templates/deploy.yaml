@@ -24,10 +24,10 @@ metadata:
   labels:
     app: nginx-service
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: my-nginx-{{ .Values.name }}
   ports:
-  - port: 
+  - port: 8080
     targetPort: 80
 
