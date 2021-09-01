@@ -18,5 +18,5 @@ spec:
         command:
           - sleep
           - "3600"
-        image: image: {{ .Values.image }}
+        image: {{ .Values.image }}
         imagePullPolicy: IfNotPresent
