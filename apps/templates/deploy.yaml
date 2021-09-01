@@ -1,32 +1,32 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-{{ .Values.name }}
+  name: nginx_{{ .Values.name }}
 spec:
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: nginx-{{ .Values.name }}
+      app: nginx_{{ .Values.name }}
   replicas: 8
   template:
     metadata:
       labels:
-        app: nginx-{{ .Values.name }}
+        app: nginx_{{ .Values.name }}
     spec:
       containers:
-      - name: nginx-{{ .Values.name }}
+      - name: nginx_{{ .Values.name }}
         image: nginx
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx-service
+  name: nginx_service
   labels:
-    app: nginx-service
+    app: nginx_service
 spec:
   type: ClusterIP
   selector:
-    app: nginx-{{ .Values.name }}
+    app: nginx_{{ .Values.name }}
   ports:
   - port: 8080
     targetPort: 80
